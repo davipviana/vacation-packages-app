@@ -1,5 +1,6 @@
 package com.davipviana.vacationpackages.ui.activity
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ListView
@@ -19,6 +20,9 @@ class PackagesActivity : AppCompatActivity() {
 
         title = APPBAR_TITLE
         initializePackageList()
+
+        val intent = Intent(this, PackageDescriptionActivity::class.java)
+        startActivity(intent)
     }
 
     private fun initializePackageList() {
