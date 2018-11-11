@@ -1,5 +1,6 @@
 package com.davipviana.vacationpackages.ui.activity
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
@@ -35,6 +36,9 @@ class PackageDescriptionActivity : AppCompatActivity() {
         setPriceInfo(saoPauloVacationPackage)
 
         setDateInfo(saoPauloVacationPackage)
+
+        val intent = Intent(this, PaymentActivity::class.java)
+        startActivity(intent)
     }
 
     private fun setDateInfo(vacationPackage: VacationPackage) {
