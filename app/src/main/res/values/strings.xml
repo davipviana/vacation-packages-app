@@ -3,4 +3,7 @@
     <string name="banner">Banner</string>
     <string name="type">Especiais</string>
     <string name="country">Brasil</string>
+    <string name="package_banner">Package Banner</string>
+    <string name="final_price_label">Preço final:</string>
+    <string name="payment_button_label">Realizar pagamento</string>
 </resources>
