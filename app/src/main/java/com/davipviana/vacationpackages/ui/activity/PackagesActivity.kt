@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.widget.ListView
 import com.davipviana.vacationpackages.R
 import com.davipviana.vacationpackages.dao.VacationPackageDao
-import com.davipviana.vacationpackages.ui.adapter.PackagesListAdapter
+import com.davipviana.vacationpackages.ui.adapter.PackageListAdapter
 
 class PackagesActivity : AppCompatActivity() {
 
@@ -23,6 +23,6 @@ class PackagesActivity : AppCompatActivity() {
 
     private fun initializePackageList() {
         val packagesList = findViewById<ListView>(R.id.packages_list)
-        packagesList.adapter = PackagesListAdapter(VacationPackageDao().getAll(), this)
+        packagesList.adapter = PackageListAdapter(VacationPackageDao().getAll(), this)
     }
 }

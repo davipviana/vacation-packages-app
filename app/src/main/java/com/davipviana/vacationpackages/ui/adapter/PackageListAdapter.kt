@@ -13,7 +13,7 @@ import com.davipviana.vacationpackages.extensions.*
 import java.text.DecimalFormat
 import java.util.*
 
-class PackagesListAdapter(
+class PackageListAdapter(
     private val packageList: List<VacationPackage>,
     private val context: Context
 ) : BaseAdapter() {
