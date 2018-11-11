@@ -23,16 +23,17 @@ class PurchaseSummaryActivity : AppCompatActivity() {
 
         title = APPBAR_TITLE
 
-        val saoPauloVacationPackage = VacationPackage("São Paulo", "sao_paulo_sp",
-            2, BigDecimal("243.99"))
+        if(intent.hasExtra("package")) {
+            val vacationPackage = intent.getSerializableExtra("package") as VacationPackage
 
-        setLocalInfo(saoPauloVacationPackage)
+            setLocalInfo(vacationPackage)
 
-        setImageInfo(saoPauloVacationPackage)
+            setImageInfo(vacationPackage)
 
-        setDateInfo(saoPauloVacationPackage)
+            setDateInfo(vacationPackage)
 
-        setPriceInfo(saoPauloVacationPackage)
+            setPriceInfo(vacationPackage)
+        }
     }
 
     private fun setLocalInfo(vacationPackage: VacationPackage) {

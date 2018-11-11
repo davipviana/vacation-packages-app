@@ -20,13 +20,18 @@ class PackagesActivity : AppCompatActivity() {
 
         title = APPBAR_TITLE
         initializePackageList()
-
-        val intent = Intent(this, PackageDescriptionActivity::class.java)
-        startActivity(intent)
     }
 
     private fun initializePackageList() {
         val packagesList = findViewById<ListView>(R.id.packages_list)
-        packagesList.adapter = PackageListAdapter(VacationPackageDao().getAll(), this)
+        val packages = VacationPackageDao().getAll()
+        packagesList.adapter = PackageListAdapter(packages, this)
+
+        packagesList.setOnItemClickListener { _, _, position, _ ->
+            val intent = Intent(this, PackageDescriptionActivity::class.java)
+            intent.putExtra("package", packages[position])
+
+            startActivity(intent)
+        }
     }
 }

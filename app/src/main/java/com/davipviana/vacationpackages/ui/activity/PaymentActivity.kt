@@ -3,6 +3,7 @@ package com.davipviana.vacationpackages.ui.activity
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.TextView
 import com.davipviana.vacationpackages.R
 import com.davipviana.vacationpackages.extensions.toCurrencyString
@@ -21,14 +22,23 @@ class PaymentActivity : AppCompatActivity() {
 
         title = APPBAR_TITLE
 
-        val saoPauloVacationPackage = VacationPackage("São Paulo", "sao_paulo_sp",
-            2, BigDecimal("243.99")
-        )
+        if(intent.hasExtra("package")) {
+            val vacationPackage = intent.getSerializableExtra("package") as VacationPackage
 
-        setPriceInfo(saoPauloVacationPackage)
+            setPriceInfo(vacationPackage)
 
-        val intent = Intent(this, PurchaseSummaryActivity::class.java)
-        startActivity(intent)
+            initializePaymentEndButton(vacationPackage)
+        }
+
+    }
+
+    private fun initializePaymentEndButton(vacationPackage: VacationPackage) {
+        val paymentEndButton = findViewById<Button>(R.id.payment_end_button)
+        paymentEndButton.setOnClickListener {
+            val intent = Intent(this, PurchaseSummaryActivity::class.java)
+            intent.putExtra("package", vacationPackage)
+            startActivity(intent)
+        }
     }
 
     private fun setPriceInfo(vacationPackage: VacationPackage) {
