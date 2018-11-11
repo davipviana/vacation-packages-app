@@ -45,23 +45,26 @@
 
     <TextView
             android:id="@+id/package_description_date"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            app:layout_constraintStart_toStartOf="@+id/package_description_days"
-            app:layout_constraintTop_toBottomOf="@+id/package_description_days"
+            app:layout_constraintStart_toStartOf="@id/package_description_days"
+            app:layout_constraintTop_toBottomOf="@id/package_description_days"
+            app:layout_constraintEnd_toStartOf="@id/package_description_price"
             tools:text="08/12 - 10/12 de 2017"/>
 
     <TextView
             android:id="@+id/package_description_price"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:textColor="@android:color/holo_green_dark"
+            android:textAlignment="textEnd"
+            app:layout_constraintStart_toEndOf="@id/package_description_date"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBaseline_toBaselineOf="@+id/package_description_date"
-            tools:text="R$ 243,99"/>
+            app:layout_constraintBaseline_toBaselineOf="@id/package_description_date"
+            tools:text="R$ 243,99" android:textAllCaps="false"/>
 
     <TextView
             android:id="@+id/package_description_final_price"
