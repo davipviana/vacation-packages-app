@@ -1,5 +1,6 @@
 package com.davipviana.vacationpackages.ui.activity
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
@@ -25,6 +26,9 @@ class PaymentActivity : AppCompatActivity() {
         )
 
         setPriceInfo(saoPauloVacationPackage)
+
+        val intent = Intent(this, PurchaseSummaryActivity::class.java)
+        startActivity(intent)
     }
 
     private fun setPriceInfo(vacationPackage: VacationPackage) {

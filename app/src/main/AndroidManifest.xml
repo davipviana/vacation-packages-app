@@ -20,6 +20,8 @@
         </activity>
         <activity android:name=".ui.activity.PaymentActivity">
         </activity>
+        <activity android:name=".ui.activity.PurchaseSummaryActivity">
+        </activity>
     </application>
 
 </manifest>
