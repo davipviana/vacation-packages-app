@@ -2,14 +2,15 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
                                              android:layout_width="match_parent"
                                              android:layout_height="match_parent"
-                                             xmlns:app="http://schemas.android.com/apk/res-auto">
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools">
 
     <ImageView
         android:id="@+id/package_item_image"
         android:layout_width="0dp"
         android:layout_height="100dp"
-        android:src="@drawable/sao_paulo_sp"
         android:scaleType="centerCrop"
+        tools:src="@sample/packages.json/pacotes/imagem"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -17,10 +18,10 @@
         app:layout_constraintVertical_bias="0"/>
 
     <TextView
-        android:id="@+id/package_item_text"
+        android:id="@+id/package_item_local"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="São Paulo"
+        tools:text="@sample/packages.json/pacotes/local"
         android:textSize="14sp"
         android:layout_margin="8dp"
         android:padding="8dp"
@@ -47,7 +48,7 @@
         android:id="@+id/package_item_days"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="2 dias"
+        tools:text="@sample/packages.json/pacotes/dias"
         android:layout_margin="8dp"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -60,7 +61,7 @@
         android:id="@+id/package_item_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="R$ 243,99"
+        tools:text="@sample/packages.json/pacotes/preco"
         android:textSize="20sp"
         android:textColor="@android:color/holo_green_dark"
         app:layout_constraintTop_toBottomOf="@id/package_item_days"
